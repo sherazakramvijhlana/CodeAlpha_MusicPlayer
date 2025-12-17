@@ -1,0 +1,113 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:radial-gradient(circle,#222,#000);
+}
+
+.player{
+    width:340px;
+    padding:25px;
+    text-align:center;
+    border-radius:25px;
+    background:rgba(255,255,255,0.07);
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 25px rgba(255,255,255,0.1);
+}
+
+.disk-box{
+    width:200px;height:200px;
+    margin:auto;
+    perspective:500px;
+}
+
+.disk{
+    width:100%;
+    animation:spin 5s linear infinite;
+    animation-play-state:paused;
+    filter:drop-shadow(0 0 18px #555);
+    transform-style:preserve-3d;
+}
+
+@keyframes spin{
+    100%{transform:rotateY(360deg);}
+}
+
+h2{
+    color:#fff;
+    margin:15px 0;
+    font-size:22px;
+}
+
+.song-list{
+    margin:15px 0;
+    text-align:left;
+}
+
+.song{
+    padding:8px 12px;
+    margin:4px 0;
+    background:rgba(255,255,255,0.1);
+    border-radius:10px;
+    cursor:pointer;
+    color:#fff;
+    transition:0.3s;
+}
+
+.song:hover{
+    background:rgba(255,255,255,0.3);
+}
+
+.controls{
+    display:flex;justify-content:center;margin-top:10px;
+}
+
+.controls button{
+    width:48px;height:48px;
+    margin:0 10px;
+    border:none;
+    border-radius:50%;
+    font-size:20px;
+    cursor:pointer;
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+    backdrop-filter:blur(10px);
+    transition:0.3s;
+    box-shadow:0 0 10px rgba(255,255,255,0.3);
+}
+.controls button:hover{
+    transform:scale(1.15);
+    background:rgba(255,255,255,0.35);
+}
+
+.volume{
+    margin-top:13px;
+    display:flex;
+    align-items:center;
+    color:#fff;
+}
+.volume input{
+    margin-left:10px;width:100%;
+}
+
+.equalizer{
+    display:flex;
+    justify-content:center;
+    margin-top:15px;
+}
+.equalizer div{
+    width:8px;
+    height:15px;
+    margin:0 3px;
+    background:#ff7300;
+    border-radius:5px;
+    animation:beat 0.6s infinite alternate;
+    opacity:0;
+}
+@keyframes beat{
+    from{height:10px}
+    to{height:35px}
+}
